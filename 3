@@ -1,0 +1,69 @@
+Git Commit Cheat Sheet
+
+Creating Commits:
+
+git add <file(s)>: Stages specific files for the next commit.
+
+git add .: Stages all changes in the current directory and its subdirectories.
+
+git add -p <file> or git add --patch <file>: Interactively stages parts of a file.
+
+git commit -m "<commit message>": Creates a new commit with the staged changes and the provided message.
+
+git commit: Opens your configured text editor to write a longer commit message.
+
+git commit -a -m "<commit message>": Stages all tracked changes and commits them directly (use with caution, as you might accidentally commit unwanted changes).
+
+git commit --amend: Modifies the last commit.
+
+If no new changes are staged, it allows you to edit the commit message of the last commit.
+
+If new changes are staged, it adds those changes to the last commit (rewrites history).
+
+Viewing Commit Information:
+
+git log: Shows the commit history.
+
+git log --oneline: Shows a concise, single-line history.
+
+git log --graph --all --oneline --decorate: Visualizes branch and merge history.
+
+git log -p <commit> or git log --patch <commit>: Shows the changes introduced by a specific commit.
+
+git show <commit>: Displays detailed information about a commit (author, date, message, diff).
+
+git log --stat: Shows a summary of changes (files modified, insertions, deletions) for each commit.
+
+git log --since=<date> / --until=<date>: Filters commits by date.
+
+git log --author=<pattern>: Filters commits by author.
+
+git log --grep=<pattern>: Filters commits by commit message.
+
+Undoing Commits (Rewriting History):
+
+git reset --soft <commit>: Moves the HEAD pointer back to the specified commit, but leaves the staging area and working directory as they were. Your changes are still staged.
+
+git reset --mixed <commit> (default): Moves the HEAD pointer back to the specified commit and unstages the changes. Your changes are kept in the working directory.
+
+git reset --hard <commit>: Moves the HEAD pointer back to the specified commit and discards all changes in the staging area and working directory since that commit. Use with extreme caution as you will lose your work.
+
+git revert <commit>: Creates a new commit that undoes the changes introduced by the specified commit. This is a safer way to undo changes as it preserves history.
+
+Best Practices for Commit Messages:
+
+	• Keep the first line short (under 50 characters): This acts as the commit summary.
+	• Separate the summary from the body with a blank line.
+	• Use the imperative, present tense: "Fix bug," not "Fixed bug" or "Fixes bug."
+	• Explain the what and why of the change, not just the how.
+	• Consider using a more detailed body for complex changes.
+
+Referencing Commits:
+
+<commit hash>: The unique SHA-1 identifier of a commit (e.g., a1b2c3d).
+
+HEAD: Refers to the tip of the current branch.
+HEAD^: Refers to the parent of the current HEAD.
+HEAD~n: Refers to the nth ancestor of the current HEAD.
+Branch names (e.g., main, develop).
+Relative references (e.g., branch^2, the grandparent of the commit pointed to by branch)
