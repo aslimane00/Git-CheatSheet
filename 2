@@ -1,0 +1,80 @@
+Git History Cheat Sheet
+
+Basic Viewing:
+
+git log: Shows the commit history in reverse chronological order.
+
+Information Displayed (Default):
+
+	• Commit hash (SHA-1)
+	• Author (name and email)
+	• Date
+	• Commit message
+
+Concise Output:
+
+git log --oneline: Displays each commit on a single line with a shortened hash and the commit message.
+
+Graphical View:
+
+git log --graph --all --oneline --decorate: Shows an ASCII graph of the branch and merge history, including all branches, with commits on one line and branch/tag decorations.
+
+Viewing Commit Changes (Diff):
+
+git log -p <commit-hash> or git log --patch <commit-hash>: Shows the detailed changes (diff) introduced by a specific commit.
+
+git show <commit-hash>: Displays information about a commit, including the author, date, message, and the patch.
+
+Filtering by Time:
+
+git log --since="<date>" or git log --after="<date>": Shows commits made after the specified date. Examples:
+
+git log --since="1 week ago"
+
+git log --since="yesterday"
+
+git log --since="2023-10-26"
+
+git log --until="<date>" or git log --before="<date>": Shows commits made before the specified date. Examples:
+
+git log --until="today"
+
+git log --until="2 days ago"
+
+git log --until="2023-11-01"
+
+git log --since="<start_date>" --until="<end_date>": Shows commits within a specific date range.
+
+Filtering by Author:
+
+git log --author="<pattern>": Shows commits whose author matches the specified pattern (can be a name or part of an email). Example:
+
+git log --author="John"
+
+git log --author="jane.doe@"
+
+Filtering by Commit Message:
+
+git log --grep="<pattern>": Shows commits whose message contains the specified pattern. Example:
+
+git log --grep="fix bug"
+
+git log --grep="refactor"
+
+Limiting the Number of Commits:
+
+git log -n <number>: Shows the last <number> of commits. Example:
+
+git log -n 5 (shows the last 5 commits)
+
+Viewing Changes to a Specific File:
+
+git log <file>: Shows the commit history that includes changes to the specified file.
+
+git log -p <file>: Shows the commit history with the diff for the specified file.
+
+Combining Options:
+
+You can combine these options to create more specific history views. For example:
+
+git log --oneline --author="John" --since="last month": Shows a concise list of commits made by "John" in the last month.
